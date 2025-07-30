@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEDIG - Corporación Educativa Digital de Guatemala | Formación Profesional Online</title>
+    <meta name="description" content="CEDIG es la plataforma educativa líder en Guatemala. Cursos certificados en Excel, Power BI, Uñas, Belleza y más. +500 estudiantes activos. Certificaciones reconocidas.">
+    <meta name="keywords" content="cursos online guatemala, certificaciones profesionales, excel avanzado, power bi, cursos belleza, educación digital guatemala">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CEDIG - Corporación Educativa Digital de Guatemala">
+    <meta property="og:description" content="Plataforma educativa líder en Guatemala con cursos certificados y reconocimiento profesional">
+    <meta property="og:image" content="https://i.ibb.co/k263cCw4/Dise-o-sin-t-tulo-9.png">
+    <meta property="og:url" content="https://tu-dominio.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/k263cCw4/Dise-o-sin-t-tulo-9.png">
+    
+    <!-- CSS Framework and Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#64748b',
+                        accent: '#059669'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        }
+        
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(93, 92, 222, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(93, 92, 222, 0.6); }
+        }
+        
+        /* Gradient backgrounds */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Custom button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #5D5CDE 0%, #4c4bcd 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #4c4bcd 0%, #3b3abc 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(93, 92, 222, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.4);
+        }
+        
+        /* Section dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+        }
+        
+        .dark .section-divider {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2rem !important;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem !important;
+            }
+        }
+        
+        /* Statistics counter animation */
+        .stat-number {
+            font-weight: 800;
+            background: linear-gradient(135deg, #5D5CDE, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Navigation */
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .navbar {
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="https://i.ibb.co/k263cCw4/Dise-o-sin-t-tulo-9.png" alt="CEDIG Logo" class="h-10 w-auto">
+                    <span class="ml-3 text-xl font-bold text-gray-900 dark:text-white">CEDIG</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition">Inicio</a>
+                    <a href="#cursos" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition">Cursos</a>
+                    <a href="#certificaciones" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition">Certificaciones</a>
+                    <a href="#testimonios" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition">Testimonios</a>
+                    <a href="#contacto" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition">Contacto</a>
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition" title="Cambiar tema">
+                        <i class="fas fa-sun dark:hidden text-gray-600"></i>
+                        <i class="fas fa-moon hidden dark:block text-gray-300"></i>
+                    </button>
+                    <a href="https://accounts.google.com/AccountChooser?continue=https://sites.google.com/view/cursoscedig/inicio?authuser=1" 
+                       target="_blank" 
+                       class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
+                        Acceder a Plataforma
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800">
+                        <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#inicio" class="text-gray-600 dark:text-gray-300 hover:text-primary transition">Inicio</a>
+                    <a href="#cursos" class="text-gray-600 dark:text-gray-300 hover:text-primary transition">Cursos</a>
+                    <a href="#certificaciones" class="text-gray-600 dark:text-gray-300 hover:text-primary transition">Certificaciones</a>
+                    <a href="#testimonios" class="text-gray-600 dark:text-gray-300 hover:text-primary transition">Testimonios</a>
+                    <a href="#contacto" class="text-gray-600 dark:text-gray-300 hover:text-primary transition">Contacto</a>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <button onclick="toggleTheme()" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                            <i class="fas fa-sun dark:hidden text-gray-600"></i>
+                            <i class="fas fa-moon hidden dark:block text-gray-300"></i>
+                        </button>
+                        <a href="https://accounts.google.com/AccountChooser?continue=https://sites.google.com/view/cursoscedig/inicio?authuser=1" 
+                           target="_blank" 
+                           class="btn-primary text-white px-6 py-2 rounded-full font-semibold flex-1 text-center">
+                            Acceder a Plataforma
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="animate-fade-in">
+                <div class="inline-flex items-center bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-medium mb-8 glass">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    Plataforma Activa • +500 Estudiantes
+                </div>
+                
+                <h1 class="hero-title text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Transforma tu
+                    <span class="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                        Futuro Profesional
+                    </span>
+                </h1>
+                
+                <p class="hero-subtitle text-xl sm:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed opacity-90">
+                    Únete a la plataforma educativa líder en Guatemala. Cursos certificados en Excel, Power BI, Belleza y más. 
+                    <strong>Certificaciones reconocidas</strong> que impulsan tu carrera.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                    <a href="https://accounts.google.com/AccountChooser?continue=https://sites.google.com/view/cursoscedig/inicio?authuser=1" 
+                       target="_blank" 
+                       class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center hover-lift animate-pulse-glow">
+                        <i class="fas fa-graduation-cap mr-3"></i>
+                        Comenzar Ahora
+                    </a>
+                    <a href="#cursos" class="glass text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center hover-lift">
+                        <i class="fas fa-play-circle mr-3"></i>
+                        Ver Cursos
+                    </a>
+                </div>
+                
+                <!-- Hero Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="animate-slide-up" style="animation-delay: 0.2s">
+                        <div class="stat-number text-4xl font-bold mb-2">+500</div>
+                        <div class="text-sm opacity-80">Estudiantes Activos</div>
+                    </div>
+                    <div class="animate-slide-up" style="animation-delay: 0.4s">
+                        <div class="stat-number text-4xl font-bold mb-2">15+</div>
+                        <div class="text-sm opacity-80">Cursos Disponibles</div>
+                    </div>
+                    <div class="animate-slide-up" style="animation-delay: 0.6s">
+                        <div class="stat-number text-4xl font-bold mb-2">98%</div>
+                        <div class="text-sm opacity-80">Satisfacción</div>
+                    </div>
+                    <div class="animate-slide-up" style="animation-delay: 0.8s">
+                        <div class="stat-number text-4xl font-bold mb-2">24/7</div>
+                        <div class="text-sm opacity-80">Soporte</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    ¿Por qué elegir CEDIG?
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Experiencia educativa premium con tecnología avanzada y soporte personalizado
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover-lift reveal">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-xl flex items-center justify-center mb-6 animate-float">
+                        <i class="fas fa-mobile-alt text-blue-600 dark:text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Multiplataforma</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Accede desde cualquier dispositivo. Tu progreso se sincroniza automáticamente entre móvil, tablet y computadora.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover-lift reveal">
+                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center mb-6 animate-float" style="animation-delay: 0.2s">
+                        <i class="fas fa-certificate text-green-600 dark:text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Certificaciones Oficiales</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Certificados verificables y reconocidos que impulsan tu desarrollo profesional en el mercado laboral.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover-lift reveal">
+                    <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center mb-6 animate-float" style="animation-delay: 0.4s">
+                        <i class="fas fa-clock text-purple-600 dark:text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Disponible 24/7</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Aprende a tu ritmo, cuando quieras y donde quieras. Sin restricciones de horario.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover-lift reveal">
+                    <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-xl flex items-center justify-center mb-6 animate-float" style="animation-delay: 0.6s">
+                        <i class="fas fa-headset text-red-600 dark:text-red-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Soporte Especializado</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Asistencia técnica personalizada vía WhatsApp. Resolvemos tus dudas rápidamente.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover-lift reveal">
+                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-xl flex items-center justify-center mb-6 animate-float" style="animation-delay: 0.8s">
+                        <i class="fas fa-chart-line text-indigo-600 dark:text-indigo-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Seguimiento Detallado</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Monitoreo completo de progreso con estadísticas avanzadas y sistema de puntos motivacional.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover-lift reveal">
+                    <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-xl flex items-center justify-center mb-6 animate-float" style="animation-delay: 1s">
+                        <i class="fas fa-award text-orange-600 dark:text-orange-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Contenido Premium</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Cursos desarrollados por expertos con contenido actualizado y metodología probada.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="cursos" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Nuestros Cursos Populares
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Formación especializada en las áreas más demandadas del mercado laboral
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Excel Course -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover-lift reveal">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 h-48 flex items-center justify-center">
+                        <i class="fas fa-file-excel text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Excel Avanzado</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Domina Excel desde básico hasta avanzado. Fórmulas, tablas dinámicas, macros y más.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="fas fa-clock mr-1"></i> 20+ horas
+                            </span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="fas fa-certificate mr-1"></i> Certificado
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power BI Course -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover-lift reveal">
+                    <div class="bg-gradient-to-r from-yellow-500 to-orange-500 h-48 flex items-center justify-center">
+                        <i class="fas fa-chart-bar text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Power BI</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Análisis de datos profesional. Dashboards interactivos y visualizaciones impactantes.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="fas fa-clock mr-1"></i> 15+ horas
+                            </span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="fas fa-certificate mr-1"></i> Certificado
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beauty Course -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover-lift reveal">
+                    <div class="bg-gradient-to-r from-pink-500 to-purple-500 h-48 flex items-center justify-center">
+                        <i class="fas fa-hand-sparkles text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Especialista en Uñas</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Técnicas profesionales de manicure, decoración y cuidado de uñas. Inicia tu negocio.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="fas fa-clock mr-1"></i> 12+ horas
+                            </span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">
+                                <i class="fas fa-certificate mr-1"></i> Certificado
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 reveal">
+                <a href="https://accounts.google.com/AccountChooser?continue=https://sites.google.com/view/cursoscedig/inicio?authuser=1" 
+                   target="_blank" 
+                   class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center hover-lift">
+                    <i class="fas fa-eye mr-3"></i>
+                    Ver Todos los Cursos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certificaciones" class="py-20 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Certificaciones Reconocidas
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Valida tus conocimientos con certificados que abren puertas en el mercado laboral
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
+                        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6 rounded-xl mb-6">
+                            <div class="text-center">
+                                <i class="fas fa-certificate text-4xl mb-4"></i>
+                                <h3 class="text-2xl font-bold mb-2">Certificado Oficial</h3>
+                                <p class="text-lg opacity-90">CEDIG - Guatemala</p>
+                            </div>
+                        </div>
+                        <div class="text-center text-gray-600 dark:text-gray-300">
+                            <p class="mb-4">Este es un ejemplo de nuestros certificados oficiales</p>
+                            <div class="flex justify-center space-x-4 text-sm">
+                                <span class="flex items-center">
+                                    <i class="fas fa-shield-alt text-green-500 mr-2"></i>
+                                    Verificable online
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="fas fa-download text-blue-500 mr-2"></i>
+                                    Descargable en PDF
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                        Características de nuestros certificados:
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-green-600 dark:text-green-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Validación en línea</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Cada certificado tiene un ID único verificable en nuestro sistema</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Reconocimiento profesional</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Acepto por empresas y instituciones de Guatemala</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-purple-600 dark:text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Entrega inmediata</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Recibe tu certificado por email en máximo 2 horas tras completar el curso</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://sites.google.com/view/validar-certificados-cedig/certificados" 
+                           target="_blank" 
+                           class="btn-secondary text-white px-6 py-3 rounded-full font-semibold inline-flex items-center hover-lift">
+                            <i class="fas fa-shield-alt mr-2"></i>
+                            Validar Certificado
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Lo que dicen nuestros estudiantes
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Historias reales de éxito de nuestra comunidad educativa
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover-lift reveal">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 italic">
+                        "Plataforma muy intuitiva y contenido excelente. El certificado de Excel me ayudó a conseguir un mejor trabajo. Totalmente recomendado."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            MG
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900 dark:text-white">María González</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Excel Avanzado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover-lift reveal">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 italic">
+                        "El curso de Power BI superó mis expectativas. Ahora manejo dashboards profesionales y mi jefe está impresionado con mis análisis."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            CR
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900 dark:text-white">Carlos Rodríguez</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Power BI</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover-lift reveal">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 italic">
+                        "Inicié mi propio negocio de uñas después del curso. Las técnicas que aprendí son de nivel profesional. ¡Gracias CEDIG!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            AM
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900 dark:text-white">Ana Morales</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Especialista en Uñas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 hero-gradient text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                ¿Listo para impulsar tu carrera?
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+                Únete a cientos de profesionales que han transformado su futuro con CEDIG
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://accounts.google.com/AccountChooser?continue=https://sites.google.com/view/cursoscedig/inicio?authuser=1" 
+                   target="_blank" 
+                   class="bg-white text-indigo-600 font-semibold py-4 px-8 rounded-full text-lg hover:bg-gray-100 transition inline-flex items-center hover-lift">
+                    <i class="fas fa-rocket mr-3"></i>
+                    Acceder al Portal Estudiantil
+                </a>
+                <a href="https://wa.me/50250903139" 
+                   target="_blank" 
+                   class="glass text-white font-semibold py-4 px-8 rounded-full text-lg hover:bg-white hover:bg-opacity-20 transition inline-flex items-center hover-lift">
+                    <i class="fab fa-whatsapp mr-3"></i>
+                    Contactar Asesor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Contáctanos
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Estamos aquí para ayudarte en tu proceso de aprendizaje
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                        Información de Contacto
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-whatsapp text-green-600 dark:text-green-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">WhatsApp</h4>
+                                <a href="https://wa.me/50250903139" target="_blank" class="text-green-600 dark:text-green-400 hover:underline">
+                                    +502 5090-3139
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Email</h4>
+                                <a href="mailto:cedigguatemala@gmail.com" class="text-blue-600 dark:text-blue-400 hover:underline">
+                                    cedigguatemala@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-red-600 dark:text-red-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Ubicación</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Guatemala</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-facebook text-purple-600 dark:text-purple-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Facebook</h4>
+                                <a href="https://www.facebook.com/profile.php?id=61574961435179" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">
+                                    Síguenos en Facebook
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                            Enlaces Importantes
+                        </h3>
+                        <div class="grid gap-4">
+                            <a href="https://accounts.google.com/AccountChooser?continue=https://sites.google.com/view/cursoscedig/inicio?authuser=1" 
+                               target="_blank" 
+                               class="flex items-center p-4 bg-blue-50 dark:bg-blue-900 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800 transition">
+                                <i class="fas fa-graduation-cap text-blue-600 dark:text-blue-400 text-xl mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">Portal Estudiantil</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Accede a tus cursos</p>
+                                </div>
+                            </a>
+                            
+                            <a href="https://sites.google.com/view/validar-certificados-cedig/certificados" 
+                               target="_blank" 
+                               class="flex items-center p-4 bg-green-50 dark:bg-green-900 rounded-lg hover:bg-green-100 dark:hover:bg-green-800 transition">
+                                <i class="fas fa-shield-alt text-green-600 dark:text-green-400 text-xl mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">Validar Certificados</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Verifica autenticidad</p>
+                                </div>
+                            </a>
+                            
+                            <a href="https://sites.google.com/view/cedig-guatemala/nosotros_1?authuser=0" 
+                               target="_blank" 
+                               class="flex items-center p-4 bg-purple-50 dark:bg-purple-900 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800 transition">
+                                <i class="fas fa-info-circle text-purple-600 dark:text-purple-400 text-xl mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">Acerca de Nosotros</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Conoce CEDIG</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.ibb.co/k263cCw4/Dise-o-sin-t-tulo-9.png" alt="CEDIG Logo" class="w-12 h-12 mr-3">
+                        <span class="text-2xl font-bold">CEDIG</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Corporación Educativa Digital de Guatemala. Transformamos vidas a través de la educación digital de calidad, 
+                        ofreciendo cursos certificados que impulsan el desarrollo profesional.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/profile.php?id=61574961435179" 
+                           target="_blank" 
+                           class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/50250903139" 
+                           target="_blank" 
+                           class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center hover:bg-green-700 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-300 hover:text-white transition">Inicio</a></li>
+                        <li><a href="#cursos" class="text-gray-300 hover:text-white transition">Cursos</a></li>
+                        <li><a href="#certificaciones" class="text-gray-300 hover:text-white transition">Certificaciones</a></li>
+                        <li><a href="#testimonios" class="text-gray-300 hover:text-white transition">Testimonios</a></li>
+                        <li><a href="https://accounts.google.com/AccountChooser?continue=https://sites.google.com/view/cursoscedig/inicio?authuser=1" target="_blank" class="text-gray-300 hover:text-white transition">Mi Plataforma</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Soporte</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://sites.google.com/view/validar-certificados-cedig/certificados" target="_blank" class="text-gray-300 hover:text-white transition">Validar Certificados</a></li>
+                        <li><a href="https://wa.me/50250903139" target="_blank" class="text-gray-300 hover:text-white transition">WhatsApp</a></li>
+                        <li><a href="mailto:cedigguatemala@gmail.com" class="text-gray-300 hover:text-white transition">Email</a></li>
+                        <li><a href="https://sites.google.com/view/cedig-guatemala/nosotros_1?authuser=0" target="_blank" class="text-gray-300 hover:text-white transition">Acerca de CEDIG</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="section-divider mb-8"></div>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2025 CEDIG - Corporación Educativa Digital de Guatemala. Todos los derechos reservados.
+                </p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="https://sites.google.com/view/cedig-guatemala/términos-y-condiciones" target="_blank" class="text-gray-400 hover:text-white transition">Términos</a>
+                    <a href="https://sites.google.com/view/cedig-guatemala/politica-de-privacidad?authuser=0" target="_blank" class="text-gray-400 hover:text-white transition">Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/50250903139" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition-all duration-300 hover:scale-105 animate-float"
+       title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Dark mode functionality
+        let isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                         (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+        function updateTheme() {
+            if (isDarkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+
+        function toggleTheme() {
+            isDarkMode = !isDarkMode;
+            updateTheme();
+        }
+
+        // Initialize theme
+        updateTheme();
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (!localStorage.getItem('darkMode')) {
+                isDarkMode = event.matches;
+                updateTheme();
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize scroll reveal
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Check on load
+
+        // Counter animation for statistics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                const increment = target / 50;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (counter.textContent.includes('+')) {
+                        counter.textContent = '+' + Math.floor(current);
+                    } else if (counter.textContent.includes('%')) {
+                        counter.textContent = Math.floor(current) + '%';
+                    } else if (counter.textContent.includes('/')) {
+                        counter.textContent = Math.floor(current) + '/7';
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 50);
+            });
+        }
+
+        // Animate counters when hero section is visible
+        const heroSection = document.querySelector('#inicio');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        observer.observe(heroSection);
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = isDarkMode ? 
+                    'rgba(0, 0, 0, 0.95)' : 
+                    'rgba(255, 255, 255, 0.95)';
+            } else {
+                navbar.style.background = isDarkMode ? 
+                    'rgba(0, 0, 0, 0.9)' : 
+                    'rgba(255, 255, 255, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
